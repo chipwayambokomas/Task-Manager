@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const tasks = require('./routes/tasks')
-
+require('./db/connect')
 //MIDDLEWARE
 
 // This allows us to get the request body
