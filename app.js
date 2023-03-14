@@ -1,4 +1,5 @@
 const express = require('express')
+//const bodyParser = require('body-parser');
 const app = express()
 const tasks = require('./routes/tasks')
 const connectDB = require('./db/connect')
@@ -6,10 +7,15 @@ require("dotenv").config()
 //MIDDLEWARE
 
 // This allows us to get the request body
+
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('./public'))
 app.use(express.json())
 
 
 app.use('/api/v1/tasks' , tasks)
+
 
 
 const PORT = 3000
