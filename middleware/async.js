@@ -4,6 +4,7 @@ const asyncWrapper = (fn) => {
             await fn(req,res,next)
         } catch (error) {
             next(error)
+            //next passes the parameter to the next middleware
         }
     }
 }
