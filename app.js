@@ -4,6 +4,7 @@ const app = express()
 const tasks = require('./routes/tasks')
 const connectDB = require('./db/connect')
 require("dotenv").config()
+const notfound = require('./middleware/notfound')
 //MIDDLEWARE
 
 // This allows us to get the request body
@@ -16,7 +17,7 @@ app.use(express.json())
 
 app.use('/api/v1/tasks' , tasks)
 
-
+app.use(notfound)
 
 const PORT = 3000
 
